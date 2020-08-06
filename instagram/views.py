@@ -68,3 +68,33 @@ def add_comment(request,id):
             comment.image_id = id 
             comment.save()
         return redirect('index')
+
+    else:
+        form = CommentsForm()
+        return render(request, 'instagram/add_comment.html',{"form":form, "image":image})
+
+def edit_profile(request):
+    current_user = request.user 
+    if request.method == 'POST':
+        form = ProfileForm(request.POST,request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.user = c8urrent_user
+        return redirect('profile')
+
+    else:
+        form = ProfileForm()
+        return render(request,'regisytration/edit_profile.html',{"form":form})
+
+def create_post(request):
+    current_user = request.user 
+    if request.method == 'POST':
+        form = ImageForm(request.Post,request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.user = current_user 
+        return redirect('index')
+
+    else:
+        form = ImageForm()
+        return render(request,'instagram/new_post.html',{"form":form})
