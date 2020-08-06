@@ -1,7 +1,5 @@
-from django.urls import path
-from .views import SignUpView,ProfilePageView, ProfileEditPageView
+from django.conf.urls import url
+from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
-urlpatterns = [
-    path('', SignUpView.as_view(), name='profile'),
-    path('profile_edit/', ProfileEditPageView, name='profile_edit')
-]
