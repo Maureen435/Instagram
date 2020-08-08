@@ -89,7 +89,7 @@ def edit_profile(request):
 def create_post(request):
     current_user = request.user 
     if request.method == 'POST':
-        form = ImageForm(request.Post,request.FILES)
+        form = ImageForm(request.POST,request.FILES)
         if form.is_valid():
             image = form.save(commit=False)
             image.user = current_user 
