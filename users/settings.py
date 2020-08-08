@@ -26,7 +26,7 @@ SECRET_KEY = 'j+s365_r69eya%k2f1)=ufj8w&ay$9zpst-62(lzj(oyu^hy$4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["^"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
